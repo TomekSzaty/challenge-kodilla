@@ -20,10 +20,8 @@ public class Main {
         Flight cheapestFlightFromCity = flightDatabase.getCheapestFlightFromCity("Madrid");
         cheapestFlightFromCity.getFlightInfo();
 
-        ArrayList<Flight> flyWithStop = flightDatabase.getFlights("Berlin", "Paris");
-        for (Flight flight : flyWithStop) {
-            flight.getFlightInfo();
-        }
+        ArrayList<Journey> flyWithStop = flightDatabase.getFlights("Berlin", "Paris");
+        System.out.println(flyWithStop);
     }
 }
 

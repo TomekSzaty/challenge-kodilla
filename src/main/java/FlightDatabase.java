@@ -100,15 +100,14 @@ public class FlightDatabase {
         return cheapestFlight;
     }
 
-    public ArrayList<Flight> getFlights(String startCity, String endCity) {
+    public ArrayList<Journey> getFlights(String startCity, String endCity) {
         ArrayList<Flight> starting = getFlightFromCity(startCity);
         ArrayList<Flight> ending = getFlightToCity(endCity);
-        ArrayList<Flight> results = new ArrayList<>();
+        ArrayList<Journey> results = new ArrayList<>();
             for (Flight first : starting) {
                 for (Flight second :ending) {
                     if (first.arrival.equals(second.departure)) {
-                        results.add(first);
-                        results.add(second);
+                        results.add(new Journey(first, second));
                     }
                 }
             }
